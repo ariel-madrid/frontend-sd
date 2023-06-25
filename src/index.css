@@ -161,3 +161,8 @@ span.flatpickr-weekday,
 [x-cloak] {
   display: none !important;
 }
+
+.leaflet-container {
+  width: 850px;
+  height: 350px;
+}

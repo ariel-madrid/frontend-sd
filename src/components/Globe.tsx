@@ -9,12 +9,12 @@ import $ from "jquery"
 let index = 0;
 
 interface MapProps {
-    count: (arg: string) => void
+    count: (arg: string, arg2: []) => void
 }
 
 function Globe({count}:MapProps) {
   index++;
-  const size = 600;
+  const size = 400;
   const width = size;
   const height = size;
   const cx = width / 2;
@@ -41,8 +41,8 @@ function Globe({count}:MapProps) {
 
   const handleCountryClick = (country: CountryFeature) => {
     rotateTo(country.properties.position);
-    console.log(country.properties);
-    count(country.properties.name)
+    console.log(country);
+    count(country.properties.name, country.properties.position)
     
   };
 
