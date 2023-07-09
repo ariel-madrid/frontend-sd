@@ -1,6 +1,8 @@
 from kafka import KafkaConsumer
 from pymongo import MongoClient
 import time
+import json
+import logging
 
 KAFKA_IP = "127.0.0.1"
 KAFKA_PORT = "9092"
@@ -15,13 +17,14 @@ def json_loader_deserializer(v):
     try:
         return json.loads(v.decode('utf-8'))
     except json.decoder.JSONDecodeError:
-        log.exception('Unable to decode: %s', v)
+        logging.exception('Unable to decode: %s', v)
         return None
 
 def main():
     # COnnect to mongo remote db.
-    db = MongoClient("mongodb://20.165.162.136:27017/eonet")
-    print(db)
+    mongo_client = MongoClient("mongodb://20.165.162.136:27017")
+    db = mongo_client["eonet"]
+    events_collection = db["events"]
 
     # Create the Consumer instance.
     consumer = KafkaConsumer(
