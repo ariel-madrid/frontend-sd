@@ -4,7 +4,7 @@ import '../../src/index.css'
 import {useState} from "react"
 import { useQueryClient } from "react-query";
 const LeaFletMap = (props) => {
-
+    console.log(props.events)
     const  [pos, setPos]= useState([0,0])
     
     const zoomLevel = 2;
@@ -24,9 +24,9 @@ const LeaFletMap = (props) => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {props.events.map(event => {
-                    
-                    if (event.geometries.length == 1){
-                        const tmp = event.geometries[0]
+                    console.log(event)
+                    if (event.geometry.length == 1){
+                        const tmp = event.geometry[0]
                         const coords = [tmp.coordinates[1],tmp.coordinates[0]]
                         return (
                             <Marker position={coords}>

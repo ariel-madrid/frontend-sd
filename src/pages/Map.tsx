@@ -46,7 +46,7 @@ const Map = () => {
   const { data: categories } = useQuery({
     queryKey: ["categories"],
     queryFn: () => getCategories(),
-    onSuccess: () => { }
+    onSuccess: () => {console.log(categories)}
   })
 
   const select = (option: string) => {
