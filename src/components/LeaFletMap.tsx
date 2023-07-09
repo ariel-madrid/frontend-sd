@@ -39,7 +39,7 @@ const LeaFletMap = (props) => {
                         )
                     }else
                     {
-                        const popUp = event.geometries.map(geom => {
+                        const popUp = event.geometry.map(geom => {
                             const coords = [geom.coordinates[1], geom.coordinates[0]]
                             console.log(event)
                             return (
