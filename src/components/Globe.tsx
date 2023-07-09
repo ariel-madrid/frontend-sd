@@ -9,7 +9,7 @@ import $ from "jquery"
 let index = 0;
 
 interface MapProps {
-    count: (arg: string, arg2: []) => void
+    count: (arg: string, arg2: [], arg3: {}) => void
 }
 
 function Globe({count}:MapProps) {
@@ -41,9 +41,7 @@ function Globe({count}:MapProps) {
 
   const handleCountryClick = (country: CountryFeature) => {
     rotateTo(country.properties.position);
-    console.log(country);
-    count(country.properties.name, country.properties.position)
-    
+    count(country.properties.name, country.properties.position, country.geometry)
   };
 
   $("#g").find("title").css("color","red")

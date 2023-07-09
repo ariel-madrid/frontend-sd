@@ -4,7 +4,7 @@
   "version": "1.0.5",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -17,6 +17,7 @@
     "@amcharts/amcharts4": "^4.10.36",
     "@types/topojson-specification": "^1.0.2",
     "apexcharts": "^3.37.0",
+    "axios": "^1.4.0",
     "d3": "^7.8.5",
     "d3-geo": "^3.1.0",
     "d3-selection": "^3.0.0",
@@ -32,9 +33,12 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-leaflet": "^4.2.1",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.8.1",
+    "semver": "^7.5.3",
     "sort-by": "^0.0.2",
     "topojson-client": "^3.1.0",
+    "tw-elements": "^1.0.0-beta2",
     "versor": "^0.2.0"
   },
   "devDependencies": {
