@@ -7,7 +7,8 @@ docker volume rm $(docker volume ls -q)
 
 ## 1. Levantar docker-compose con servicios de kafka y zookeeper.
 Ir a carpeta Producer/kafka-docker
-`docker compose -f=docker-compose-expose.yml up -`
+
+`docker compose -f=docker-compose-expose.yml up -d`
 
 ## 2. Levantar DB
 - Ir a carpeta MongoDB.
