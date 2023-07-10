@@ -4,9 +4,8 @@ COPY . /app
 RUN npm install
 RUN npm run build
 
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install nginx -y
+FROM nginx:latest
 COPY --from=build /app/dist /var/www/html/
-EXPOSE 80
+COPY /nginx/default.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx","-g","daemon off;"]
+
