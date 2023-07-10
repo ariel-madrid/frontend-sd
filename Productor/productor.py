@@ -20,4 +20,3 @@ for event in data:
 
     producer.send('events', value= event)
     print('\n')
-    sleep(0.5)
