@@ -21,7 +21,7 @@ def json_loader_deserializer(v):
 
 def main():
     # COnnect to mongo remote db.
-    mongo_client = MongoClient("mongodb://distribuidos:Distribuidos1-2023-a-m-r-%C3%B1@localhost:27017/?authMechanism=DEFAULT")
+    mongo_client = MongoClient("mongodb://distribuidos:Distribuidos1-2023-a-m-r@localhost:27017/?authMechanism=DEFAULT")
     db = mongo_client["eonet"]
     events_collection = db["events"]
     

@@ -13,7 +13,7 @@ from pymongo import MongoClient
 app = Flask(__name__)
 CORS(app)
 #Config Mongo connection
-client = MongoClient('localhost', 27017, username='distribuidos', password='Distribuidos1-2023-a-m-r-ñ')
+client = MongoClient('localhost', 27017, username='distribuidos', password='Distribuidos1-2023-a-m-r')
 mongo = client.eonet
 
 pipeline = [
@@ -39,8 +39,8 @@ spark = SparkSession.\
     builder.\
     appName("streamingExampleRead").\
     config('spark.jars.packages', 'org.mongodb.spark:mongo-spark-connector_2.12:3.0.1').\
-    config("spark.mongodb.input.uri", "mongodb://distribuidos:Distribuidos1-2023-a-m-r-ñ@localhost:27017/eonet.events?authSource=admin").\
-    config("spark.mongodb.output.uri", "mongodb://distribuidos:Distribuidos1-2023-a-m-r-ñ@localhost:27017/eonet.events?authSource=admin").\
+    config("spark.mongodb.input.uri", "mongodb://distribuidos:Distribuidos1-2023-a-m-r@localhost:27017/eonet.events?authSource=admin").\
+    config("spark.mongodb.output.uri", "mongodb://distribuidos:Distribuidos1-2023-a-m-r@localhost:27017/eonet.events?authSource=admin").\
     config('spark.mongodb.change.stream.publish.full.document.only','true').\
     getOrCreate()
 
